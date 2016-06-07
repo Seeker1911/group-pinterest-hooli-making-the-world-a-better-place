@@ -9,7 +9,7 @@ app.config(($routeProvider) => ($routeProvider
 		controllerAs: 'profile',
 		templateUrl: 'javascripts/partials/userProfile.html'
 	})
-	.when('/:id/userprofile/:id/userBoard', { // '/:id/userprofile/:id/userboard'
+	.when('/userprofile/userBoard', { // '/:id/userprofile/:id/userboard'
 		controller:'UserBoardCtrl',
 		controllerAs: 'board',
 		templateUrl: 'javascripts/partials/userBoard.html'
