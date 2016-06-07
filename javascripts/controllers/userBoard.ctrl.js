@@ -1,1 +1,3 @@
-app.controller
+app.controller('UserBoardCtrl', function () {
+	const board = this;
+})

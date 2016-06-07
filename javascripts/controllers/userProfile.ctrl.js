@@ -1,1 +1,3 @@
-app.controller
+app.controller('UserProfileCtrl', function () {
+	const profile = this;
+})
