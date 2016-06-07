@@ -9,12 +9,30 @@
 </head>
 <body>
 
-  <h1>Testing</h1>
+  <div class="container">
+    <div ng-app="app">
+      <div ng-view></div>
+    </div>
+  </div>
 
+  <!-- App Dependencies -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+  <!-- Hooli's Own Javascript -->
+  <script src="javascripts/app.js"></script>
+
+  <script src="javascripts/config/auth.config.js"></script>
+
+  <script src="javascripts/factories/auth.factory.js"></script>
+  <script src="javascripts/factories/userProfile.factory.js"></script>
+
+  <script src="javascripts/controllers/auth.ctrl.js"></script>
+  <script src="javascripts/controllers/userBoard.ctrl.js"></script>
+  <script src="javascripts/controllers/userProfile.ctrl.js"></script>
+
 
 </body>
 </html>
