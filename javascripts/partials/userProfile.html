@@ -3,14 +3,15 @@
 	class="modal
 				modal-dialog
 				modal-content
-				modal-header"
+				modal-header
+				fade"
 		id="newBoardModal"
 >
 	<h1>Create New Board</h1>
 
 	<form>
-	  <input type="text"  placeholder="Name of Board">
-	  <input type="submit" class="btn btn-info" value="Save" onclick="this.disabled=true;this.form.submit();">
+	  <input type="text"  placeholder="Name of Board" ng-model="profile.newBoard.title">
+	  <input type="submit" class="btn btn-info" value="Save" ng-click="profile.createNewBoard()" onclick="this.disabled=true;this.form.submit();">
 	  <input
 	  	type="submit"
 			class="btn btn-danger"
@@ -20,18 +21,21 @@
 	</form>
 </div>
 
-
 <h1>{{profile.name}}</h1>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBoardModal">Create New Board</button>
-<div ng-repeat= "(key,board) in profile.boards">
+<div class="container-fluid">
+	<div class="row">
+		<div ng-repeat= "(key,board) in profile.boards" class="col-md-4">
 
-<!-- Placeholder for an ng-repeat over user's current boards -->
-<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
+		<!-- Placeholder for an ng-repeat over user's current boards -->
+		<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
 
-<a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
+		<a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
 
-<button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature -->
+		<button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature -->
 
+		</div>
+	</div>
 </div>
 
