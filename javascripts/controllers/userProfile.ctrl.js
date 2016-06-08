@@ -5,6 +5,7 @@ app.controller('UserProfileCtrl', function (UserProfileFact, $timeout) {
 		.then(function (resolve) {
 			return profile.boards = resolve
 		});
+
 	// profile.newBoard.uid = 'placeholder';
 	profile.createNewBoard = function () {
 		UserProfileFact.createBoard(profile.newBoard);
@@ -12,4 +13,5 @@ app.controller('UserProfileCtrl', function (UserProfileFact, $timeout) {
 			location.reload()
 		}, 1000);
 	}
-})
+
+});

@@ -20,6 +20,7 @@
 		>
 	</form>
 </div>
+<!-- End of modal -->
 
 <h1>{{profile.name}}</h1>
 
@@ -28,12 +29,39 @@
 	<div class="row">
 		<div ng-repeat= "(key,board) in profile.boards" class="col-md-4">
 
-		<!-- Placeholder for an ng-repeat over user's current boards -->
-		<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
+			<!-- Placeholder for an ng-repeat over user's current boards -->
+			<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
 
-		<a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
+			<!-- <a class="btn btn-info" href="">Edit</a> Insert reference to the create modal for the edit feature -->
 
-		<button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature -->
+			<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle">Edit</button>
+			<button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature -->
+
+		<!-- </div> -->
+
+<!-- Modal for Edit Board feature -->
+
+			<div class="modal" id="editBoardModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1>Edit {{board.title}}'s Title:</h1>
+						</div>
+
+						<form>
+						  <input type="text" ng-model="editedTitle" placeholder="{{board.title}}">
+						  <input type="submit" ng-click="editedBoard()" class="btn btn-info" value="Save">
+						  <input
+						  	type="submit"
+								class="btn btn-danger"
+								value="Cancel"
+								data-dismiss="modal"
+							>
+						</form>
+					</div>
+				</div>
+			</div>
+<!-- end of modal -->
 
 		</div>
 	</div>
