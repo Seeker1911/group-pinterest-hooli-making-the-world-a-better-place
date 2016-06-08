@@ -20,6 +20,7 @@
 		/>
 	</form>
 </div>
+<!-- End of modal -->
 
 <h1>{{board.name}}</h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPinModal">Create New Pin</button>
@@ -28,12 +29,40 @@
 		<!-- Placeholder for an ng-repeat over user's current boards -->
 		<div ng-repeat="(key,pin) in board.pins" class="col-md-4">
 
-		<h2>{{pin.title}}</h2>
-		<img src="{{pin.url}}" alt="" class="img-responsive">
-		<a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
+			<h2>{{pin.title}}</h2>
+			<img src="{{pin.url}}" alt="" class="img-responsive">
 
-		<button class="btn btn-danger" ng-click="board.deletePin(key)">Delete</button>
+			<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle">Edit</button>
+
+			<button class="btn btn-danger" ng-click="board.deletePin(key)">Delete</button>
 		</div>
 	</div>
 </div>
+<!-- Insert reference to the delete feature —
+ -->
+<!-- Modal for Edit Board feature -->
+
+		<div class="modal" id="editBoardModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1>Edit {{pin.title}}'s Title:</h1>
+					</div>
+
+					<form>
+					  <input type="text" ng-model="editedPinTitle" placeholder="{{pin.title}}">
+					  <input type="text" ng-model="editedPinURL" placeholder="{{pin.url}}">
+					  <input type="submit" ng-click="editedPin()" class="btn btn-info" value="Save">
+					  <input
+					  	type="submit"
+							class="btn btn-danger"
+							value="Cancel"
+							data-dismiss="modal"
+						>
+					</form>
+				</div>
+			</div>
+		</div>
+<!-- end of modal -->
+
 

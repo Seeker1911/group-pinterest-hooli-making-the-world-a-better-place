@@ -14,10 +14,6 @@ app.factory("UserProfileFact", function ($http) {
     	return response.data;
   })
 
-
-
-
-
 	return {
 		boardsList () {
 			return boards;
@@ -37,10 +33,9 @@ app.factory("UserProfileFact", function ($http) {
     deletePin (index) {
       $http.delete(`${pinsUrl}/${index}.json`)
       console.log("Delete Log", `${pinsUrl}/${index}.json`)
+    },
+    editBoard (index, data) {
+    	$http.patch(`${boardsUrl}/${index}.json`, data);
     }
-
-
-
 	}
-
 })
