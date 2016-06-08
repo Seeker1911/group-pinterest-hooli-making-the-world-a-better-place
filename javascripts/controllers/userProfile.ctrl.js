@@ -1,11 +1,14 @@
 app.controller('UserProfileCtrl', function (UserProfileFact, $timeout) {
 	const profile = this;
 	profile.name = "User X";
+	profile.newBoard = {
+		uid: ''
+	};
 	const request = UserProfileFact.boardsList()
 		.then(function (resolve) {
 			return profile.boards = resolve
 		});
-	// profile.newBoard.uid = 'placeholder';
+
 	profile.createNewBoard = function () {
 		UserProfileFact.createBoard(profile.newBoard);
 		$timeout (() => {
