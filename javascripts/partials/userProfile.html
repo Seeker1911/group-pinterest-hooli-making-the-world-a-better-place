@@ -32,7 +32,7 @@
 			<!-- Placeholder for an ng-repeat over user's current boards -->
 			<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
 
-			<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle">Edit</button>
+			<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle" ng-click="profile.setEdit(key, profile.boards[key])">Edit</button>
 
 			<button class="btn btn-danger" ng-click="profile.deleteBoard(key)">Delete</button> <!-- Insert reference to the delete feature -->
 
@@ -46,12 +46,12 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h1>Edit {{board.title}}'s Title:</h1>
+							<h1>Edit {{profile.board.title}}'s Title:</h1>
 						</div>
 
 						<form>
-						  <input type="text" ng-model="editedTitle" placeholder="{{board.title}}">
-						  <input type="submit" ng-click="editedBoard()" class="btn btn-info" value="Save">
+						  <input type="text" ng-model="profile.edit.title" placeholder="{{profile.board.title}}">
+						  <input type="submit" ng-click="profile.editBoard(profile.keyToEdit)" class="btn btn-info" value="Save" data-dismiss="modal">
 						  <input
 						  	type="submit"
 								class="btn btn-danger"

@@ -22,4 +22,17 @@ app.controller('UserProfileCtrl', function (UserProfileFact, $timeout) {
       location.reload()
     }, 50);
   }
+
+  profile.setEdit = function (key, board) {
+  	console.log("board", board);
+  	profile.keyToEdit = key;
+  	profile.board = board;
+	}
+
+  profile.editBoard = function (key) {
+  	console.log(profile.edit);
+  	UserProfileFact.editBoard(key, profile.edit);
+  	profile.boards[key] = profile.edit;
+
+	}
 })
