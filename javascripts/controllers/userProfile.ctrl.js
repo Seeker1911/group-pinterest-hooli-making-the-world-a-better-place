@@ -12,4 +12,11 @@ app.controller('UserProfileCtrl', function (UserProfileFact, $timeout) {
 			location.reload()
 		}, 1000);
 	}
+
+  profile.deleteBoard = function (key) {
+    UserProfileFact.deleteBoard(key);
+    $timeout (() => {
+      location.reload()
+    }, 50);
+  }
 })
