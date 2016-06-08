@@ -9,8 +9,9 @@
 	<h1>Create New Pin</h1>
 
 	<form>
-	  <input type="text"  placeholder="Name of Pin"/>
-	  <input type="submit" class="btn btn-info" value="Save" onclick="this.disabled=true;this.form.submit();"/>
+	  <input type="text"  placeholder="Title of Pin" ng-model="board.newPin.title"/>
+	  <input type="text" placeholder="Url of Image" ng-model="board.newPin.url"/>
+	  <input type="submit" class="btn btn-info" value="Save" ng-click="board.createNewPin()" onclick="this.disabled=true;this.form.submit();"/>
 	  <input
 	  	type="submit"
 			class="btn btn-danger"
@@ -23,16 +24,20 @@
 
 <h1>{{board.name}}</h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPinModal">Create New Pin</button>
+<div class="container">
+	<div class="row">
+		<!-- Placeholder for an ng-repeat over user's current boards -->
+		<div ng-repeat="(key,pin) in board.pins" class="col-md-4">
 
+			<h2>{{pin.title}}</h2>
+			<img src="{{pin.url}}" alt="" class="img-responsive">
 
-<!-- Placeholder for an ng-repeat over user's current boards -->
-<div ng-repeat="pin in board.pins">
+			<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle">Edit</button>
 
-	<h2>{{pin.title}}</h2>
-	<img src="{{pin.url}}" alt="" class="img-responsive">
-	<button class="btn btn-info" data-toggle="modal" data-target="#editBoardModal" data-editBoard="newTitle">Edit</button>
-
-	<button class="btn btn-danger" ng-click="">Delete</button>
+			<button class="btn btn-danger" ng-click="board.deletePin(key)">Delete</button>
+		</div>
+	</div>
+</div>
 <!-- Insert reference to the delete feature —
  -->
 <!-- Modal for Edit Board feature -->
@@ -59,4 +64,5 @@
 			</div>
 		</div>
 <!-- end of modal -->
-</div>
+
+

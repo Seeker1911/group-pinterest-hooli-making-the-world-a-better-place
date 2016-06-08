@@ -27,7 +27,19 @@ app.factory("UserProfileFact", function ($http) {
 		},
 		createBoard (data) {
 			$http.post(`${boardsUrl}.json`, data);
-		}
+		},
+		createPin (data) {
+			$http.post(`${pinsUrl}.json`, data);
+		},
+    deleteBoard (index) {
+      $http.delete(`${boardsUrl}/${index}.json`)
+    },
+    deletePin (index) {
+      $http.delete(`${pinsUrl}/${index}.json`)
+      console.log("Delete Log", `${pinsUrl}/${index}.json`)
+    }
+
+
 
 	}
 
