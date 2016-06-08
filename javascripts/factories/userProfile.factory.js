@@ -27,6 +27,9 @@ app.factory("UserProfileFact", function ($http) {
 		},
 		createBoard (data) {
 			$http.post(`${boardsUrl}.json`, data);
+		},
+		createPin (data) {
+			$http.post(`${pinsUrl}.json`, data);
 		}
 
 	}
