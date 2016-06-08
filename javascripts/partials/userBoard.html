@@ -1,11 +1,28 @@
-<!-- modal containing the form for adding/editing a pin will be here
-<form>
-  <input type="text" ng-model="" placeholder="Name of Pin"/>
-  <input type="submit" value="Save"/>
-  <input type="submit" value="Cancel"/>
-</form> -->
+<!-- Modal to create new pin -->
+<div
+	class="modal
+				modal-dialog
+				modal-content
+				modal-header"
+		id="newPinModal"
+>
+	<h1>Create New Pin</h1>
+
+	<form>
+	  <input type="text"  placeholder="Name of Pin"/>
+	  <input type="submit" class="btn btn-info" value="Save"/>
+	  <input
+	  	type="submit"
+			class="btn btn-danger"
+			value="Cancel"
+			data-dismiss="modal"
+		/>
+	</form>
+</div>
+
 <h1>{{board.name}}</h1>
-<button type="button" class="btn btn-primary">Create New Pin</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPinModal">Create New Pin</button>
+
 
 <!-- Placeholder for an ng-repeat over user's current boards -->
 <div ng-repeat="pin in board.pins">
