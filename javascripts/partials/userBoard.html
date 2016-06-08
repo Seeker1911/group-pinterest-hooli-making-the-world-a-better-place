@@ -20,13 +20,16 @@
 	</form>
 </div>
 
-<h1><!-- {{Placeholder name for userBoard's name}}--></h1>
+<h1>{{board.name}}</h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPinModal">Create New Pin</button>
 
+
 <!-- Placeholder for an ng-repeat over user's current boards -->
+<div ng-repeat="pin in board.pins">
 
-<h2><!-- Variable for Pin Name --></h2>
-
+<h2>{{pin.title}}</h2>
+<img src="{{pin.url}}" alt="" class="img-responsive">
 <a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
 
-<button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature —
+<button class="btn btn-danger" ng-click="">Delete</button>
+</div><!-- Insert reference to the delete feature —
