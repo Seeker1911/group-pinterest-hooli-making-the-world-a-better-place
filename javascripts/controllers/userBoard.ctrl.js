@@ -17,4 +17,6 @@ app.controller('UserBoardCtrl', function (UserProfileFact, $routeParams) {
 		});
 
 
+
+
 })
