@@ -1,13 +1,29 @@
-<!-- modal containing the form for adding a new board will be here
-<form>
-  <input type="text" ng-model="" placeholder="Name of Board"/>
-  <input type="submit" value="Save"/>
-  <input type="submit" value="Cancel"/>
-</form> -->
+<!-- Modal to create new board -->
+<div
+	class="modal
+				modal-dialog
+				modal-content
+				modal-header"
+		id="newBoardModal"
+>
+	<h1>Create New Board</h1>
+
+	<form>
+	  <input type="text"  placeholder="Name of Board">
+	  <input type="submit" class="btn btn-info" value="Save">
+	  <input
+	  	type="submit"
+			class="btn btn-danger"
+			value="Cancel"
+			data-dismiss="modal"
+		>
+	</form>
+</div>
+
 
 <h1><!-- {{Placeholder for variable containing the user name}} --></h1>
 
-<button type="button" class="btn btn-primary">Create New Board</button> <!-- Connnect button to modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBoardModal">Create New Board</button> <!-- Connnect button to modal -->
 
 <!-- Placeholder for an ng-repeat over user's current boards -->
 <h2><!-- Variable for Board Title --></h2>
