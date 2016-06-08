@@ -1,8 +1,12 @@
-app.controller('UserBoardCtrl', function (UserProfileFact, $routeParams) {
+app.controller('UserBoardCtrl', function (UserProfileFact, $routeParams, $timeout) {
 	const board = this;
 	const key = $routeParams.key;
 	board.name = $routeParams.name;
 	board.pins = [];
+	board.newPin = {
+		boardid: key,
+		uid: ''
+	}
 
 	const request = UserProfileFact.pinsList()
 		.then(function (resolve) {
@@ -15,6 +19,11 @@ app.controller('UserBoardCtrl', function (UserProfileFact, $routeParams) {
 			console.log(board.pins);
 			return board.pins;
 		});
-
+	board.createNewPin = function () {
+		UserProfileFact.createPin(board.newPin);
+		$timeout (() => {
+			location.reload()
+		}, 1000);
+	}
 
 })
