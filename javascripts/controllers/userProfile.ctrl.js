@@ -1,4 +1,8 @@
 app.controller('UserProfileCtrl', function (UserProfileFact) {
 	const profile = this;
-	profile.boards = UserProfileFact.boardsList();
+	profile.name = "User X";
+	const request = UserProfileFact.boardsList()
+		.then(function (resolve) {
+			return profile.boards = resolve
+		});
 })

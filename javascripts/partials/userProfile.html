@@ -5,13 +5,16 @@
   <input type="submit" value="Cancel"/>
 </form> -->
 
-<h1><!-- {{Placeholder for variable containing the user name}} --></h1>
+<h1>{{profile.name}}</h1>
 
 <button type="button" class="btn btn-primary">Create New Board</button> <!-- Connnect button to modal -->
+<div ng-repeat= "(key,board) in profile.boards">
+
 
 <!-- Placeholder for an ng-repeat over user's current boards -->
-<h2><!-- Variable for Board Title --></h2>
+<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>
 
 <a class="btn btn-info" href="">Edit</a> <!-- Insert reference to the create modal for the edit feature -->
 
 <button class="btn btn-danger" ng-click="">Delete</button> <!-- Insert reference to the delete feature -->
+</div>
