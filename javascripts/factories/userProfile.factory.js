@@ -36,6 +36,9 @@ app.factory("UserProfileFact", function ($http) {
     },
     editBoard (index, data) {
     	$http.patch(`${boardsUrl}/${index}.json`, data);
+    },
+    editPin (index, data) {
+    	$http.patch(`${pinsUrl}/${index}.json`, data);
     }
 	}
 })
