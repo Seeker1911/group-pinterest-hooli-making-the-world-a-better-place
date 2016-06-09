@@ -27,7 +27,7 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newBoardModal">Create New Board</button>
 <div class="container-fluid">
 	<div class="row">
-		<div ng-repeat= "(key,board) in profile.boards" class="col-md-4">
+		<div ng-repeat= "(key,board) in profile.boards" class="col-md-4 boards">
 
 			<!-- Placeholder for an ng-repeat over user's current boards -->
 			<h2><a href="#/userProfile/{{key}}/{{board.title}}">{{board.title}}</a></h2>

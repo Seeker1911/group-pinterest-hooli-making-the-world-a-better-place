@@ -1,9 +1,23 @@
-<h1>Welcome to Hooli: Making the World a Better Place</h1>
+<div class="container-fluid">
+	<h1 class="hooli">Welcome to Hooli: <p><small>Making the World a Better Place</small></p></h1>
 
-<h3>Login</h3>
 
-<form>
-  <input type="email" ng-model="" placeholder="email"/>
-  <input type="password" ng-model="" placeholder="password"/>
-  <input type="submit" value="Login"/>
-</form>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+		<h3>Login</h3>
+			<form>
+				<div class="form-group">
+			  	<input class="form-control" type="email" ng-model="" placeholder="email"/>
+			  </div>
+			  <div class="form-group">
+			  <input type="password" ng-model="" placeholder="password" class="form-control"/>
+			  </div>
+			  <!-- <input type="submit" value="Login"/> -->
+			  <a href="#/userProfile" class="btn btn-primary">Login</a>
+			</form>
+		</div>
+		<div class="col-md-4"></div>
+		</div>
+	</div>
+</div>
