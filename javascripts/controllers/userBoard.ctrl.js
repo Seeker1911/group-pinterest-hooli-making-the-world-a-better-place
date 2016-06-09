@@ -33,6 +33,15 @@ app.controller('UserBoardCtrl', function (UserProfileFact, $routeParams, $timeou
 		}, 50);
 	}
 
+  board.setEditPin = function (key, pin) {
+    board.keyToEdit = key;
+    board.pin = pin;
+  }
+
+  board.editPin = function (key) {
+    UserProfileFact.editPin(key, board.edit);
+    board.pins[key] = board.edit;
+  }
 
 
 })
