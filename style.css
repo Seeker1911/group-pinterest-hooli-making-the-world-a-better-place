@@ -1,0 +1,24 @@
+.pin {
+	height: 470px;
+	border: 1px solid black;
+
+}
+
+.hooli {
+	margin-top: 3em;
+	text-align: center;
+	font-size: 3em;
+}
+
+.row {
+	margin-top: 1.5em;
+}
+
+h1 {
+	text-align: center;
+}
+
+.boards {
+	border: 1px solid black;
+	height: 150px;
+}
